@@ -3,6 +3,19 @@
   "version": "0.1.0",
   "description": "A state-machine inspired library for managing web apps",
   "main": "lib/index.js",
+  "keywords": [
+    "state machine",
+    "reducer",
+    "state",
+    "predictable",
+    "functional",
+    "immutable",
+    "hot",
+    "live",
+    "replay",
+    "flux",
+    "elm"
+  ],
   "repository": {
     "url": "git@github.com:ajhyndman/web-machine.git",
     "type": "git"
