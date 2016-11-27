@@ -1,6 +1,6 @@
 {
   "name": "web-machine",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A state-machine inspired library for managing web apps",
   "main": "lib/index.js",
   "keywords": [
