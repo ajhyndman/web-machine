@@ -7,13 +7,21 @@ Web-Machine replaces _Middleware_ and _Thunks_ with **subscriptions**.
 
 Subscriptions, informed by State Machine theory, allow side effects to be loaded onto specific transitions in your app state, rather than loaded onto actions, agnostic to state (e.g. [redux-saga](http://yelouafi.github.io/redux-saga/)).
 
-## Subscriptions
+## Installation
+
+```npm install --save web-machine```
+
+```yarn add web-machine```
+
+## Concepts
+
+### Subscriptions
 
 Subscriptions are inspired by [Elm Ports](https://guide.elm-lang.org/interop/javascript.html).
 
 When you initialize a Web-Machine program, you may register any number of *subscriptions*.  A *subscription* in Web-Machine is just a function.  Each *subscription* accepts **Commands** (think redux actions), and a dispatch function.  It may then do any side effects you wish, and dispatch **Actions** back to the Web-Machine program.
 
-## Commands vs Actions
+### Commands vs Actions
 
 In Web-Machine, we use the terms *Command* and *Action* to refer to very similar concepts.  *Commands* and *Actions* have the same API.  Each is simply a plain JavaScript object with the following shape:
 
