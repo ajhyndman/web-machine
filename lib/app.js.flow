@@ -1,0 +1,43 @@
+/**
+ * This file provides type definitions for use with the Flow type checker.
+ *
+ * @flow
+ */
+
+export type Action = {
+  +type: string;
+  +body?: any;
+};
+
+export type Command = {
+  +type: string;
+  +body?: any;
+};
+
+export type Model<shape: Object> = shape;
+
+export type Init<shape> = [Model<shape>, ?Command];
+
+export type Update<shape> = (action: Action, model: Model<shape>) => [Model<shape>, ?Command];
+
+export type View<shape> = (model: Model<shape>, dispatch: (action: Action) => void) => void;
+
+export type Subscription = (command: Command, dispatch: (action: Action) => void) => void;
+
+export type ProgramDefinition<shape> = {
+  init: Init<shape>;
+  update: Update<shape>;
+  subscriptions: Subscription[];
+  view: View<shape>;
+};
+
+export declare class Program<shape: Object> {
+  dispatch: (action: Action) => void;
+  fireCommand: (command: ?Command) => void;
+  state: shape;
+  subscriptions: Subscription[];
+  update: Update<shape>;
+  view: View<shape>;
+
+  constructor: (definition: ProgramDefinition<shape>) => void;
+}
